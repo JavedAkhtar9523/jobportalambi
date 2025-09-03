@@ -46,6 +46,10 @@ mongoose
 app.use("/api/auth", authRoutes);
 // app.use('/api/jobs', jobRoutes);
 // app.use('/api/admin', adminRoutes);
+// Health check endpoint
+app.get("/", (req, res) => {
+  res.json({ message: "Job Portal API is running!" });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
