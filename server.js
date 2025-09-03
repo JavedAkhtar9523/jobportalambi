@@ -17,8 +17,12 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://jobportalfrontend-delta.vercel.app",
+      "https://jobportalfrontend-delta.vercel.app/", // trailing slash ke saath bhi
+      /\.vercel\.app$/, // All vercel domains
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
